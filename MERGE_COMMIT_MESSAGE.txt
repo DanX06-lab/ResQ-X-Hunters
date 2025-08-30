@@ -1,3 +1,0 @@
-# Merge remote-tracking branch 'origin/master' into master
-
-# Resolved conflicts between local and remote

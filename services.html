@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Service Emergency</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            margin: 32px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            padding: 24px 16px;
+            width: 95vw;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+        }
+
+        .back-arrow {
+            font-size: 28px;
+            cursor: pointer;
+            margin-right: 16px;
+            user-select: none;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+            letter-spacing: 2px;
+            font-family: cursive, Arial, sans-serif;
+        }
+
+        .section-heading {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .emergency-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .emergency-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 16px 10px;
+            flex: 1 0 30%;
+            cursor: pointer;
+        }
+
+        .icon-circle {
+            width: 55px;
+            height: 55px;
+            background: #e7f2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 2em;
+            border: 2px solid #c3dfff;
+        }
+
+        .label {
+            font-size: 1rem;
+            font-family: 'Lora', Arial, sans-serif;
+            margin-top: 2px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-row">
+            <div class="back-arrow">&#8592;</div>
+            <div class="title">Service</div>
+        </div>
+        <div class="section-heading">What kind of emergency</div>
+        <div class="emergency-row">
+            <div class="emergency-option">
+                <div class="icon-circle">&#128293;</div>
+                <div class="label">Fire</div>
+            </div>
+            <div class="emergency-option">
+                <div class="icon-circle">&#127754;</div>
+                <div class="label">Flood</div>
+            </div>
+            <div class="emergency-option">
+                <div class="icon-circle">&#9877;&#65039;</div>
+                <div class="label">Medical</div>
+            </div>
+            <div class="emergency-option">
+                <div class="icon-circle">&#128736;</div>
+                <div class="label">Crime</div>
+            </div>
+            <div class="emergency-option">
+                <div class="icon-circle">&#128167;</div>
+                <div class="label">Blood camp</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

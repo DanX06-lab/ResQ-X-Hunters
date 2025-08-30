@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated, Dimensions } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
 const Home = () => {
     const scrollAnim = useRef(new Animated.Value(0)).current;
+    const navigation = useNavigation();
 
     useEffect(() => {
         const animation = Animated.loop(
@@ -13,7 +15,6 @@ const Home = () => {
                 duration: 15000,
                 useNativeDriver: true,
                 isInteraction: false,
-                easing: undefined,
             }),
         );
         animation.start();
@@ -65,26 +66,38 @@ const Home = () => {
                     to send an emergency alert to your{'\n'}
                     predefined contacts with your location
                 </Text>
-                <TouchableOpacity style={styles.actionButton}>
+                <TouchableOpacity
+                    style={styles.actionButton}
+                    onPress={() => navigation.navigate('ServiceEmergency')}   // Navigate to ServiceEmergency screen
+                >
                     <Text style={styles.actionButtonText}>my location</Text>
                 </TouchableOpacity>
             </View>
 
             {/* Bottom navigation */}
             <View style={styles.navBar}>
-                <Text style={styles.navItem}>HOME</Text>
-                <Text style={styles.navItem}>SERVICE</Text>
-                <Text style={styles.navItem}>Mycontacts</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <Text style={styles.navItem}>HOME</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('Service')}>
+                    <Text style={styles.navItem}>SERVICE</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Text style={styles.navItem}>Mycontacts</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    // Your existing styles as is
     container: {
         flex: 1,
         backgroundColor: '#121212',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     header: {
         flexDirection: 'row',
